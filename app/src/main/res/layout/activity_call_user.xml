@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CallUser.CallUserActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:paddingTop="24dp"
+        android:background="@color/main_blue"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_back"
+            android:src="@mipmap/ic_back"
+            android:scaleType="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="联系人"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginLeft="50dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:text="添加联系人"
+            android:id="@+id/tv_add_user"
+            android:textSize="12sp"
+            android:background="@drawable/bg_text_use"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:padding="6dp"
+            />
+
+    </FrameLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_view"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

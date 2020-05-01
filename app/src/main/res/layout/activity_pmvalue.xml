@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PMValue.PMValueActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:paddingTop="24dp"
+        android:background="@color/main_blue"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/iv_back"
+            android:src="@mipmap/ic_back"
+            android:scaleType="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="PM2.5报警阀值"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginLeft="50dp"
+            />
+
+
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="修改报警阀值: "
+        android:textSize="14sp"
+        android:textColor="@color/text_title"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="16dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default PM = "
+        android:textColor="@color/text_second"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_value"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="1532.45"
+        android:hint="请输入报警阀值"
+        />
+
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="保存"
+        android:id="@+id/tv_save"
+        android:textSize="12sp"
+        android:background="@drawable/bg_text_save"
+        android:textColor="@color/white"
+        android:layout_marginRight="10dp"
+        android:padding="6dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        />
+
+
+</LinearLayout>

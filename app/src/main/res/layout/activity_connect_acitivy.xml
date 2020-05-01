@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ConnectAcitivy">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:paddingTop="24dp"
+        android:background="@color/main_blue"
+        android:orientation="horizontal"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="未连接"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/tv_device_name"
+            android:layout_marginLeft="16dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_scan"
+            android:text="扫描"
+            android:textSize="14sp"
+            android:background="@drawable/bg_text_use"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical|right"
+            android:padding="5dp"
+            android:layout_marginRight="20dp"
+            />
+
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/card_pm"
+            android:visibility="gone"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/bg_pm"
+                android:id="@+id/iv_pm"
+                android:scaleType="centerCrop"
+                />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="30dp"
+                android:padding="4dp"
+                android:background="#30000000"
+                android:orientation="vertical"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_pm_value"
+                    android:text="pm2.5 = 1535.48"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="测量到的PM值："
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    />
+
+
+            </FrameLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/float_menu"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            fab:menu_fab_size="normal"
+            fab:menu_showShadow="true"
+            fab:menu_shadowColor="#66000000"
+            fab:menu_shadowRadius="4dp"
+            fab:menu_shadowXOffset="1dp"
+            fab:menu_shadowYOffset="3dp"
+            fab:menu_colorNormal="#DA4336"
+            fab:menu_colorPressed="#E75043"
+            fab:menu_colorRipple="#99FFFFFF"
+            fab:menu_animationDelayPerItem="50"
+            fab:menu_labels_textColor="#FFFFFF"
+            fab:menu_labels_textSize="14sp"
+            fab:menu_labels_cornerRadius="3dp"
+            fab:menu_labels_colorNormal="#333333"
+            fab:menu_labels_colorPressed="#444444"
+            fab:menu_labels_colorRipple="#66FFFFFF"
+            fab:menu_openDirection="up"
+            fab:menu_backgroundColor="@android:color/transparent"
+            >
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/float_btn_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_setting"
+                fab:fab_size="mini"
+                fab:fab_label="设置" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/float_btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_call"
+                fab:fab_size="mini"
+                fab:fab_label="联系人" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_pm"
+            android:background="@drawable/bg_text_use"
+            android:id="@+id/tv_update_pm"
+            android:visibility="gone"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:text="更新pm值"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:padding="5dp"
+            android:layout_marginTop="30dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
