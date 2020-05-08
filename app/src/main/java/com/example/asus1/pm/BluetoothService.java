@@ -430,10 +430,8 @@ public class BluetoothService {
                     if(mNeedRead){
                         bytes = mmInStream.read(buffer,n,buffer.length-n);
                         n+=bytes;
-                        Log.d("luomin", "run: "+n);
-                        if(n != 0 && buffer[n-1] == '\n'){
+                        if(n != 0 && buffer[n-1] == 10){
                             byte[] data = Arrays.copyOf(buffer,buffer.length);
-                            Log.d("luomin", "run: "+new String(buffer));
                             mHandler.obtainMessage(Constants.MESSAGE_READ, n, -1, data)
                                     .sendToTarget();
                             n = 0;

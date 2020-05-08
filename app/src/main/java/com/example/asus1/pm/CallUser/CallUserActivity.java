@@ -1,6 +1,8 @@
 package com.example.asus1.pm.CallUser;
 
 import android.app.Dialog;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CallUserActivity extends BaseActivity {
+public class CallUserActivity extends BaseActivity implements Handler.Callback{
 
     private RecyclerView mRecyclerView;
     private ImageView mBack;
@@ -29,11 +31,13 @@ public class CallUserActivity extends BaseActivity {
     private CallUserAdapter mAdapter;
     private List<User> mUsersList = new ArrayList<>();
     private Dialog mDialog;
+    private Handler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_user);
+        mHandler = new Handler(getMainLooper(),this);
         init();
     }
 
@@ -55,7 +59,7 @@ public class CallUserActivity extends BaseActivity {
             }
         });
 //        mUsersList.add(new User("小明","15378149488"));
-        mAdapter = new CallUserAdapter(this,mUsersList);
+        mAdapter = new CallUserAdapter(this,mUsersList,mHandler);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
         getUser();
@@ -138,5 +142,14 @@ public class CallUserActivity extends BaseActivity {
         mUsersList.add(new User(name,phone));
         mAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public boolean handleMessage(Message msg) {
+        User data = (User) msg.obj;
+        mUsersList.remove(data);
+        AppSharePreferenceMrg.remove(AppSharePreferenceMrg.CALL_USER,CallUserActivity.this,data.name);
+        mAdapter.notifyDataSetChanged();
+        return true;
     }
 }
